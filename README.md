@@ -1,34 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DomPixel Challenge FrontEnd
 
-## Getting Started
+> Um desafio solicitado pela empresa DomPixel aonde um CRUD fullstack deve ser desenvolvido, este é o repositório para a parte frontEnd.
 
-First, run the development server:
+### Ajustes e melhorias
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+O projeto foi desenvolvido com prazo de 24 horas, separado em tarefas que, no frontEnd, foram:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [x] Homepage com requisição GET da API
+- [x] Página de adicionar produto com requisição POST da API
+- [ ] Página de editar produto com requisição post da API
+- [ ] Modal de excluir produto
+- [ ] Responsividade
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 💻 Pré-requisitos
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
+* Você instalou a versão mais recente do javascript e possui o Visual Studio Code ou outro editor de texto instalado em sua máquina, com algum gerenciador de pacotes, npm é recomendado, já que foi o utilizado para este projeto, na parte do front, (no backEnd foi-se utilizado o yarn devido a problemas com latência).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 🚀 Instalando DomPixel CRUD
 
-## Learn More
+Para instalar o DomPixel CRUD, siga estas etapas:
 
-To learn more about Next.js, take a look at the following resources:
+1 - faça o download do repositório para sua máquina, extraia-o para uma pasta adequadamente e utilize o terminal para instalar os pacotes e dependências do projeto utilizando o comando npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2 - rode o projeto utilizando o comando: npm run dev para hostear o projeto localmente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## ☕ Usando <nome_do_projeto>
 
-## Deploy on Vercel
+Para usar DomPixel Crud, siga estas etapas:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1 - Digite em sua barra de pesquisa o link e porta que seu projeto está hospedado localmente, após claro, rodar o servidor backEnd para conexão com o banco de dados mysql, fazendo com que as requisições funcionem, etc.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2 - Por enquanto, apenas foi-se desenvolvido apenas uma funcionalidade do site, que é a de adicionar produtos, utilize dos campos de input para adicionar um produto no banco de dados e volte para a página home, através da barra de pesquisa ou botão para verificar se seu produto foi adicionado.
+
+
+
