@@ -26,7 +26,7 @@ Para instalar o DomPixel CRUD, siga estas etapas:
 
 2 - rode o projeto utilizando o comando: npm run dev para hostear o projeto localmente.
 
-## ☕ Usando <nome_do_projeto>
+## ☕ Usando DomPixel CRUD
 
 Para usar DomPixel Crud, siga estas etapas:
 
