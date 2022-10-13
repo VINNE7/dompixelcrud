@@ -28,7 +28,7 @@ const AddProduct: NextPage = () => {
           <Link href={"/"}>
             <span className="flex cursor-pointer">
               <MdArrowBackIos size={25} />
-              <h1 className="text-2xl font-bold">Adicionar Produto</h1>
+              <h1 className="text-2xl font-bold">Editar Produto</h1>
             </span>
           </Link>
         </div>
