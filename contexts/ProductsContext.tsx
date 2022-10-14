@@ -23,6 +23,11 @@ interface IProductProviderProps {
 interface IProductContext {
   products: IProducts[];
   addProduct: (newProduct: INewProduct) => Promise<void>;
+  deleteProduct: (product_id: string) => Promise<void>;
+  editProduct: (
+    product_id: string,
+    editedProduct: IEditedProduct
+  ) => Promise<void>;
 }
 
 interface INewProduct {
@@ -89,7 +94,9 @@ export function ProductsProvider({ children }: IProductProviderProps) {
   }, [getProducts]);
 
   return (
-    <ProductsContext.Provider value={{ products, addProduct }}>
+    <ProductsContext.Provider
+      value={{ products, addProduct, deleteProduct, editProduct }}
+    >
       {children}
     </ProductsContext.Provider>
   );

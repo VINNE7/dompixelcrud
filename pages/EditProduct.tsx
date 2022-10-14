@@ -3,22 +3,26 @@ import { MdArrowBackIos } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { useProducts } from "../contexts/ProductsContext";
 import Link from "next/link";
+import { useRouter } from "next/router";
 interface IFormData {
   product_name: string;
   product_category: string;
   product_price: string;
 }
 
-const AddProduct: NextPage = () => {
+const EditProduct: NextPage = () => {
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm<IFormData>();
-  const { addProduct } = useProducts();
+
+  const router = useRouter();
+
+  const { editProduct } = useProducts();
   const onSubmit = (data: IFormData) => {
-    addProduct(data);
+    editProduct(router.query.id, data);
     console.log(data);
   };
   return (
@@ -90,4 +94,4 @@ const AddProduct: NextPage = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;

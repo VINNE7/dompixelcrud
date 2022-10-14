@@ -9,14 +9,24 @@ const dateFormatter = new Intl.DateTimeFormat("pt-BR", {
   dateStyle: "short",
 });
 const ProductTable = () => {
+  interface IHandleEditClick {
+    product_id: string;
+    product_name: string;
+    product_category: string;
+    product_price: string;
+  }
+
   const { products } = useProducts();
 
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProductId, setSelectedProductId] = useState("");
 
   const router = useRouter();
 
-  const handleEditClick = (product_id: string) => {
-    router.push(`/EditProduct/?id=${product_id}`);
+  const handleEditClick = (productInfo: IHandleEditClick) => {
+    router.push(
+      `/EditProduct/?id=${productInfo.product_id}&name=${productInfo.product_name}&category=${productInfo.product_category}&price=${productInfo.product_price}`
+    );
   };
 
   return (
@@ -69,13 +79,21 @@ const ProductTable = () => {
                   <button
                     onClick={() => {
                       setModalOpen(true);
+                      setSelectedProductId(product.product_id);
                     }}
                   >
                     <AiFillDelete size={25} />
                   </button>
                   <button
                     type="button"
-                    onClick={() => handleEditClick(product.product_id)}
+                    onClick={() =>
+                      handleEditClick({
+                        product_id: product.product_id,
+                        product_category: product.product_category,
+                        product_name: product.product_name,
+                        product_price: product.product_price,
+                      })
+                    }
                   >
                     <HiPencil size={25} />
                   </button>
@@ -85,7 +103,12 @@ const ProductTable = () => {
           ))}
         </tbody>
       </table>
-      {modalOpen && <DeleteModal setOpenModal={setModalOpen} />}
+      {modalOpen && (
+        <DeleteModal
+          product_id={selectedProductId}
+          setOpenModal={setModalOpen}
+        />
+      )}
     </div>
   );
 };

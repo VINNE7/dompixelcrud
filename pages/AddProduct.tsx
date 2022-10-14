@@ -3,6 +3,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import { useForm } from "react-hook-form";
 import { useProducts } from "../contexts/ProductsContext";
 import Link from "next/link";
+import { useRouter } from "next/router";
 interface IFormData {
   product_name: string;
   product_category: string;
@@ -16,11 +17,15 @@ const AddProduct: NextPage = () => {
     watch,
     formState: { errors },
   } = useForm<IFormData>();
+
   const { addProduct } = useProducts();
+
   const onSubmit = (data: IFormData) => {
     addProduct(data);
     console.log(data);
   };
+
+  const router = useRouter();
   return (
     <main className="flex  justify-center items-center  h-screen font-montserrat mx-auto">
       <div className="flex flex-col gap-4 w-screen ">
@@ -81,6 +86,9 @@ const AddProduct: NextPage = () => {
           <button
             type="submit"
             className="bg-black text-white mx-auto px-4 py-2"
+            onClick={() => {
+              router.push("/");
+            }}
           >
             Salvar
           </button>
